@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
-
-import ExampleComponent from 'react-background-image'
+import React, { Component } from "react";
+import BackgroundImage from "react-background-image";
+import placeholder from "./images/small.jpg";
+import hdImage from "./images/large.jpg";
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
-      </div>
-    )
+      <main className="main">
+        <BackgroundImage placeholder={placeholder} src={hdImage} />
+      </main>
+    );
   }
 }

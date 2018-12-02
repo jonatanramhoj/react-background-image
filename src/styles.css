@@ -1,8 +1,34 @@
-/* add css styles here (optional) */
+.backgroundImageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+.backgroundImagePlaceholder {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+}
+
+.backgroundImageHd {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.backgroundImageHdFadeIn {
+  opacity: 1;
 }
