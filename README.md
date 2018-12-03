@@ -29,6 +29,9 @@ export default class App extends React.Component {
 }
 ```
 
+## Demo
+https://jonatanramhoj.github.io/react-background-image/
+
 ## License
 
 MIT © [jonatanramhoj](https://github.com/jonatanramhoj)
