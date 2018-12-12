@@ -5,7 +5,12 @@
 import * as React from "react";
 import styles from "./styles.css";
 
-export type Props = { src: string; placeholder: string };
+export type Props = {
+  src: string;
+  placeholder: string;
+  className?: string;
+  children?: JSX.Element[] | JSX.Element;
+};
 
 export default class BackgroundImage extends React.Component<Props> {
   hdImage: React.RefObject<HTMLDivElement>;
@@ -22,20 +27,26 @@ export default class BackgroundImage extends React.Component<Props> {
     newImage.onload = () => {
       hdImageRef.setAttribute(
         "style",
-        `background-image: url('${this.props.src}')`,
+        `background-image: url('${this.props.src}')`
       );
       hdImageRef.classList.add(`${styles.backgroundImageHdFadeIn}`);
     };
   }
 
   render() {
+    const { className, children } = this.props;
     return (
-      <div className={styles.backgroundImageContainer}>
+      <div
+        className={`${styles.backgroundImageContainer} ${
+          className ? className : ""
+        }`}
+      >
         <div className={styles.backgroundImageHd} ref={this.hdImage} />
         <div
           className={styles.backgroundImagePlaceholder}
           style={{ backgroundImage: `url('${this.props.placeholder}')` }}
         />
+        {children}
       </div>
     );
   }

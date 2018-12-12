@@ -1,6 +1,6 @@
 # react-background-image
 
-> Display a placeholder image while the real image loads, featuring different preloading and animation options
+> Display a placeholder image while the real image loads.
 
 [![NPM](https://img.shields.io/npm/v/react-background-image.svg)](https://www.npmjs.com/package/react-background-image) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -22,7 +22,13 @@ export default class App extends React.Component {
   render() {
     return (
       <main className="main">
-        <BackgroundImage placeholder={placeholder} src={hdImage} />
+        <BackgroundImage
+          placeholder={placeholder}
+          src={hdImage}
+          className="myCustomClass"
+        >
+          <p>I'm a child element.</p>
+        </BackgroundImage>
       </main>
     );
   }
@@ -30,6 +36,7 @@ export default class App extends React.Component {
 ```
 
 ## Demo
+
 https://jonatanramhoj.github.io/react-background-image/
 
 ## License
