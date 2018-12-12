@@ -26,14 +26,23 @@ export default class App extends React.Component {
           placeholder={placeholder}
           src={hdImage}
           className="myCustomClass"
+          {...otherProps}
         >
-          <p>I'm a child element.</p>
+          <p>Other element</p>
+          <OtherReactComponent />
         </BackgroundImage>
       </main>
     );
   }
 }
 ```
+
+## Props
+| Prop  | Type | Notes | 
+| ------------- | ------------- | ------------- |
+| src  | String  | HD image to load  |
+| placeholder  | String | Placeholder image to be immediately displayed |
+| className  | String | Optional custom css class |
 
 ## Demo
 

@@ -7,13 +7,7 @@ export default class App extends React.Component {
   render() {
     return (
       <main className="main">
-        <BackgroundImage
-          placeholder={placeholder}
-          src={hdImage}
-          className="myCustomClass"
-        >
-          <p>I'm a child element.</p>
-        </BackgroundImage>
+        <BackgroundImage placeholder={placeholder} src={hdImage} />
       </main>
     );
   }

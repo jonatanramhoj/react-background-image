@@ -34,17 +34,18 @@ export default class BackgroundImage extends React.Component<Props> {
   }
 
   render() {
-    const { className, children } = this.props;
+    const { placeholder, className, children, ...rest } = this.props;
     return (
       <div
         className={`${styles.backgroundImageContainer} ${
           className ? className : ""
         }`}
+        {...rest}
       >
         <div className={styles.backgroundImageHd} ref={this.hdImage} />
         <div
           className={styles.backgroundImagePlaceholder}
-          style={{ backgroundImage: `url('${this.props.placeholder}')` }}
+          style={{ backgroundImage: `url('${placeholder}')` }}
         />
         {children}
       </div>
