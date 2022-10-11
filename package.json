@@ -1,6 +1,6 @@
 {
   "name": "react-background-image",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Display a placeholder image while the real image loads, featuring different preloading and animation options",
   "author": "jonatanramhoj",
   "license": "MIT",
