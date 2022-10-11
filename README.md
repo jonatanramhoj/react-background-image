@@ -18,31 +18,32 @@ import BackgroundImage from "react-background-image";
 import placeholder from "./images/small.jpg";
 import hdImage from "./images/large.jpg";
 
-export default class App extends React.Component {
+export default function App () {
   render() {
     return (
-      <main className="main">
+      <div className="main">
         <BackgroundImage
           placeholder={placeholder}
           src={hdImage}
           className="myCustomClass"
           {...otherProps}
         >
-          <p>Other element</p>
+          <p className="some-class">Other element</p>
           <OtherReactComponent />
         </BackgroundImage>
-      </main>
+      </div>
     );
   }
 }
 ```
 
 ## Props
-| Prop  | Type | Notes | 
-| ------------- | ------------- | ------------- |
-| src  | String  | HD image to load  |
-| placeholder  | String | Placeholder image to be immediately displayed |
-| className  | String | Optional custom css class |
+
+| Prop        | Type   | Notes                                         |
+| ----------- | ------ | --------------------------------------------- |
+| src         | String | HD image to load                              |
+| placeholder | String | Placeholder image to be immediately displayed |
+| className   | String | Optional custom css class                     |
 
 ## Demo
 

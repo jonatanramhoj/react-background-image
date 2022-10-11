@@ -1,11 +1,11 @@
-.backgroundImageContainer {
+.react-bg-img-container {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-.backgroundImagePlaceholder {
+.react-bg-img-placeholder {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -16,7 +16,7 @@
   background-size: cover;
 }
 
-.backgroundImageHd {
+.react-bg-img-hd {
   position: absolute;
   z-index: 2;
   top: 0;
@@ -29,6 +29,6 @@
   transition: opacity 1s ease;
 }
 
-.backgroundImageHdFadeIn {
+.react-bg-img-hd-fade-in {
   opacity: 1;
 }
