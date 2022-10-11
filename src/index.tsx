@@ -1,54 +1,39 @@
-/**
- * @class BackgroundImage
- */
+import * as React from 'react';
+import { useEffect, createRef } from 'react';
+import './styles.scss';
 
-import * as React from "react";
-import styles from "./styles.css";
-
-export type Props = {
+const BackgroundImage = (props: {
   src: string;
   placeholder: string;
   className?: string;
   children?: JSX.Element[] | JSX.Element;
+}) => {
+  const hdImage = createRef<HTMLDivElement>();
+  const { placeholder, className, src, children, ...rest } = props;
+
+  useEffect(() => {
+    const newImage = document.createElement('img');
+    const hdImageRef = hdImage.current!;
+    newImage.src = src;
+    newImage.onload = () => {
+      hdImageRef.setAttribute('style', `background-image: url('${src}')`);
+      hdImageRef.classList.add('react-bg-img-hd-fade-in');
+    };
+  }, []);
+
+  return (
+    <div
+      className={`react-bg-img-container ${className ? className : ''}`}
+      {...rest}
+    >
+      <div className='react-bg-img-hd' ref={hdImage} />
+      <div
+        className='react-bg-img-placeholder'
+        style={{ backgroundImage: `url('${placeholder}')` }}
+      />
+      {children}
+    </div>
+  );
 };
 
-export default class BackgroundImage extends React.Component<Props> {
-  hdImage: React.RefObject<HTMLDivElement>;
-
-  constructor(props: Props) {
-    super(props);
-    this.hdImage = React.createRef();
-  }
-
-  componentDidMount() {
-    const newImage = document.createElement("img");
-    const hdImageRef = this.hdImage.current!; // Using ! to remove undefined/null from type definition
-    newImage.src = this.props.src;
-    newImage.onload = () => {
-      hdImageRef.setAttribute(
-        "style",
-        `background-image: url('${this.props.src}')`
-      );
-      hdImageRef.classList.add(`${styles.backgroundImageHdFadeIn}`);
-    };
-  }
-
-  render() {
-    const { placeholder, className, children, ...rest } = this.props;
-    return (
-      <div
-        className={`${styles.backgroundImageContainer} ${
-          className ? className : ""
-        }`}
-        {...rest}
-      >
-        <div className={styles.backgroundImageHd} ref={this.hdImage} />
-        <div
-          className={styles.backgroundImagePlaceholder}
-          style={{ backgroundImage: `url('${placeholder}')` }}
-        />
-        {children}
-      </div>
-    );
-  }
-}
+export default BackgroundImage;
