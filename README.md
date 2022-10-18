@@ -13,27 +13,25 @@ npm install --save react-background-image
 ## Usage
 
 ```tsx
-import React from "react";
-import BackgroundImage from "react-background-image";
-import placeholder from "./images/small.jpg";
-import hdImage from "./images/large.jpg";
+import React from 'react';
+import BackgroundImage from 'react-background-image';
+import placeholder from './images/small.jpg';
+import hdImage from './images/large.jpg';
 
-export default function App () {
-  render() {
-    return (
-      <div className="main">
-        <BackgroundImage
-          placeholder={placeholder}
-          src={hdImage}
-          className="myCustomClass"
-          {...otherProps}
-        >
-          <p className="some-class">Other element</p>
-          <OtherReactComponent />
-        </BackgroundImage>
-      </div>
-    );
-  }
+export default function App() {
+  return (
+    <div className='main'>
+      <BackgroundImage
+        placeholder={placeholder}
+        src={hdImage}
+        className='myCustomClass'
+        {...otherProps}
+      >
+        <p className='some-class'>Other element</p>
+        <OtherReactComponent />
+      </BackgroundImage>
+    </div>
+  );
 }
 ```
 
